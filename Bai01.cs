@@ -10,7 +10,7 @@ public static class Bai01
         Console.Write("Nhap thang va nam (mm/yyyy): ");
         var input = Console.ReadLine();
         DateTime dt;
-        while (!DateTime.TryParseExact(input, "M/yyyy", null, DateTimeStyles.None, out dt))
+        while (!TryParseDatetime(input!, out dt))
         {
             Console.Write("Ngay thang khong hop le, nhap lai: ");
             input = Console.ReadLine();
@@ -37,8 +37,28 @@ public static class Bai01
             dow = 0;
         }
     }
+
+    private static bool TryParseDatetime(string datetime, out DateTime result)
+    {
+        result = default;
+        var parts = datetime.Replace(" ", "").Split('/');
+        if (parts.Length != 2) return false;
+        
+        if (!int.TryParse(parts[0], out var month)) return false;
+        if (!int.TryParse(parts[1], out var year)) return false;
+        
+        try
+        {
+            result = new DateTime(year, month, 1);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
     
-    static int DayOfWeek(int day, int month, int year)
+    private static int DayOfWeek(int day, int month, int year)
     {
         int[] t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
         year -= (month < 3) ? 1 : 0;
