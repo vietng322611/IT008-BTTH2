@@ -1,4 +1,7 @@
-﻿namespace Lab02;
+﻿using System;
+using System.Collections.Generic;
+
+namespace Lab02;
 
 public static class Bai03
 {

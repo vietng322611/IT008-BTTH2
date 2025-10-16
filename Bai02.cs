@@ -1,4 +1,8 @@
-﻿namespace Lab02;
+﻿using System;
+using System.IO;
+using System.Linq;
+
+namespace Lab02;
 
 public static class Bai02
 {

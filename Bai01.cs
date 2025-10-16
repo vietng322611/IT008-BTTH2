@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 namespace Lab02;
 
@@ -6,12 +7,12 @@ public static class Bai01
 {
     public static void Run()
     {
-        Console.Write("Nhap thang va nam: ");
+        Console.Write("Nhap thang va nam (mm/yyyy): ");
         var input = Console.ReadLine();
         DateTime dt;
         while (!DateTime.TryParseExact(input, "M/yyyy", null, DateTimeStyles.None, out dt))
         {
-            Console.WriteLine("Ngay thang khong hop le, nhap lai: ");
+            Console.Write("Ngay thang khong hop le, nhap lai: ");
             input = Console.ReadLine();
         }
 
