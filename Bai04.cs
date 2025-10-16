@@ -103,9 +103,9 @@ public static class Bai04
 {
     public static void Run()
     {
-        Console.Write("Nhap phan so thu nhat: ");
+        Console.Write("Nhap phan so thu nhat (a/b): ");
         var a = NhapPhanSo();
-        Console.Write("Nhap phan so thu hai: ");
+        Console.Write("Nhap phan so thu hai (a/b): ");
         var b = NhapPhanSo();
         
         Console.WriteLine($"{a} + {b} = {a + b}");
